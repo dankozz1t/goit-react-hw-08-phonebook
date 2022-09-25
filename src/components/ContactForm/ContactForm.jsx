@@ -17,6 +17,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import inputReducer from './inputReducer';
 
+import s from './ContactForm.module.css';
+
 const initialValue = {
   phone: '',
   name: '',
@@ -60,15 +62,16 @@ const ContactForm = () => {
   };
 
   if (isError) {
-    toast.info(`ERROR`);
-    return;
+    toast.info(`Error`);
   }
+
+  const classNameRow = `align-items-center ${s.row}`;
 
   return (
     <Form onSubmit={handleFormSubmit}>
-      <Row className="align-items-center">
-        <Col xs="auto">
-          <Form.Label htmlFor="name" className="text">
+      <Row className={classNameRow}>
+        <Col xs>
+          <Form.Label htmlFor="name" className="formLabel">
             Name
           </Form.Label>
           <Form.Control
@@ -84,8 +87,8 @@ const ContactForm = () => {
             required
           />
         </Col>
-        <Col xs="auto">
-          <Form.Label htmlFor="phone" className="text">
+        <Col xs>
+          <Form.Label htmlFor="phone" className="formLabel">
             Phone
           </Form.Label>
           <Form.Control
@@ -102,7 +105,7 @@ const ContactForm = () => {
           />
         </Col>
       </Row>
-      <div className="d-grid gap-2">
+      <div className="d-grid gap-2 marginBottom">
         <Button variant="primary" type="submit" disabled={isDeleting}>
           {isDeleting ? (
             <Loader width="45" height="10" color="#fff" />

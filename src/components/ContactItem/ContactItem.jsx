@@ -11,6 +11,8 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import s from './ContactItem.module.css';
+
 const ContactItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting, isError }] =
     useDeleteContactMutation();
@@ -23,11 +25,7 @@ const ContactItem = ({ id, name, phone }) => {
 
   if (isError) {
     toast.info(`Error`);
-    return (
-      <h2 className="text" style={{ fontSize: '40px' }}>
-        ERROR
-      </h2>
-    );
+    return <h2 className="formLabel errorSize">ERROR</h2>;
   }
 
   return (
@@ -36,14 +34,14 @@ const ContactItem = ({ id, name, phone }) => {
         borderRadius: '5px',
       }}
     >
-      <Row>
-        <Col xs={5}>
-          <span style={{ fontWeight: '700' }}> {name} </span>
+      <Row className={s.row}>
+        <Col className={s.colName}>
+          <span className={s.name}> {name} </span>
         </Col>
-        <Col xs={4}>
-          <span style={{ color: 'darkred', fontWeight: '600' }}> {phone} </span>
+        <Col className={s.colPhone}>
+          <span className={s.phone}> {phone} </span>
         </Col>
-        <Col>
+        <Col className={s.colButton}>
           <Button
             type="button"
             onClick={handleDeleteClick}

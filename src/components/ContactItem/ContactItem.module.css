@@ -1,0 +1,49 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.colName {
+  text-align: start;
+}
+
+.colButton {
+  text-align: end;
+}
+
+.colPhone {
+  text-align: center;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.phone {
+  color: darkred;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 540px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .colName {
+    text-align: center;
+  }
+
+  .colButton {
+    text-align: center;
+  }
+
+  .colPhone {
+    text-align: center;
+  }
+}

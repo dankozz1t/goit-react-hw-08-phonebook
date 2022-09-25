@@ -41,9 +41,9 @@ button {
   cursor: pointer;
 }
 
-.text {
+.formLabel {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 
   font-size: 17px;
   font-weight: 500;
@@ -51,4 +51,12 @@ button {
   color: #fff;
   opacity: 0.7;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}
+
+.errorSize {
+  font-size: 30px;
 }

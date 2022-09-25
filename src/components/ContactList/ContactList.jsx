@@ -12,6 +12,8 @@ import Loader from 'components/Loader';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { toast } from 'react-toastify';
 
+import s from './ContactList.module.css';
+
 const ContactList = () => {
   const filter = useSelector(getFilter, shallowEqual);
   const { data: contacts, isLoading, isError } = useFetchContactsQuery();
@@ -32,19 +34,11 @@ const ContactList = () => {
 
   if (isError) {
     toast.info(`Error`);
-    return (
-      <h2 className="text" style={{ fontSize: '40px' }}>
-        ERROR
-      </h2>
-    );
+    return <h2 className="formLabel errorSize">ERROR</h2>;
   }
 
   if (filteredContacts.length === 0) {
-    return (
-      <h2 className="text" style={{ fontSize: '40px' }}>
-        Contact not found
-      </h2>
-    );
+    return <h2 className="formLabel errorSize">Contact not found</h2>;
   }
 
   const elements = filteredContacts.map(({ id, name, phone }) => (
@@ -52,14 +46,7 @@ const ContactList = () => {
   ));
 
   return (
-    <ListGroup
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '5px',
-      }}
-      variant="flush"
-    >
+    <ListGroup className={s.list} variant="flush">
       {elements}
     </ListGroup>
   );

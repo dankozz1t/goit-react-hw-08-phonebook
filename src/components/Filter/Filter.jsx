@@ -17,9 +17,9 @@ const Filter = () => {
   };
 
   return (
-    <Form style={{ marginTop: '20px' }}>
+    <Form className="marginBottom">
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={6} className="text">
+        <Form.Label column sm={6} className="formLabel">
           Find contacts by name
         </Form.Label>
         <Col sm={6}>
