@@ -1,22 +1,22 @@
-import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+// import { Suspense, lazy } from 'react';
+// import { Routes, Route } from 'react-router-dom';
 
 import Container from './Container';
-import Loader from './Loader';
+// import Loader from './Loader';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import TaskPhonebook from './TaskPhonebook';
 
-import PublicRoute from './PublicRoute';
-import PrivateRoute from './PrivateRoute';
+// import PublicRoute from './PublicRoute';
+// import PrivateRoute from './PrivateRoute';
 
-const RegisterPage = lazy(() => import('../pages/RegisterPage'));
-const LoginPage = lazy(() => import('../pages/LoginPage'));
+// const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+// const LoginPage = lazy(() => import('../pages/LoginPage'));
 
-const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
-const HomePage = lazy(() => import('../pages/HomePage'));
+// const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
+// const HomePage = lazy(() => import('../pages/HomePage'));
 
 export const App = () => {
   return (
