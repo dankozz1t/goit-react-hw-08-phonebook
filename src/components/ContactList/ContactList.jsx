@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 
-import { useFetchContactsQuery } from 'redux/contactsAPI';
+import { useFetchContactsQuery } from 'redux/contacts/contactsApi/contactsAPI';
 
 import ContactItem from '../ContactItem/';
 
 import { useSelector, shallowEqual } from 'react-redux';
 
-import { getFilter } from '../../redux/selectors';
+import { getFilter } from '../../redux/contacts/filter/selectors';
 import Loader from 'components/Loader';
 
 import ListGroup from 'react-bootstrap/ListGroup';

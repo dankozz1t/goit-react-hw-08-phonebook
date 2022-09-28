@@ -3,7 +3,7 @@ import React, { useEffect, useReducer } from 'react';
 import {
   useAddContactMutation,
   useFetchContactsQuery,
-} from '../../redux/contactsAPI';
+} from '../../redux/contacts/contactsApi/contactsAPI';
 
 import { toast } from 'react-toastify';
 

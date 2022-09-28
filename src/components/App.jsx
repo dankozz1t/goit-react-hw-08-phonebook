@@ -1,54 +1,77 @@
-// import { Suspense, lazy } from 'react';
-// import { Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Container from './Container';
-// import Loader from './Loader';
+import Loader from './Loader';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import TaskPhonebook from './TaskPhonebook';
+// import TaskPhonebook from './TaskPhonebook';
 
-// import PublicRoute from './PublicRoute';
-// import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import AppBar from './AppBar';
+import { useSelector } from 'react-redux';
+import { getToken } from 'redux/auth/authAPI/authSlice';
+import { useFetchCurrentUserQuery } from 'redux/auth/authAPI/authAPI';
 
-// const RegisterPage = lazy(() => import('../pages/RegisterPage'));
-// const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
 
-// const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
-// const HomePage = lazy(() => import('../pages/HomePage'));
+const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
+const HomePage = lazy(() => import('../pages/HomePage'));
 
 export const App = () => {
+  const token = useSelector(getToken);
+  useFetchCurrentUserQuery(null, { skip: !token });
+
+  console.log(token);
+
   return (
     <>
       <Container>
-        <TaskPhonebook />
+        <AppBar />
+        {/* <TaskPhonebook /> */}
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route
+              path="/"
+              end
+              element={
+                <PublicRoute>
+                  <HomePage />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <PublicRoute restricted>
+                  <RegisterPage />
+                </PublicRoute>
+              }
+            />
 
-        {/* ! TODO: FIX BUG WITH REACT ROUTER VERSION   https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou */}
-        {/* 
-        <Routes>
-          <Suspense fallback={<Loader />}>
-            <PublicRoute exact path="/">
-              <HomePage />
-            </PublicRoute>
+            <Route
+              path="/login"
+              element={
+                <PublicRoute restricted>
+                  <LoginPage />
+                </PublicRoute>
+              }
+            />
 
-            <Route exact path="/" element={<PrivateRoute />}>
-              <Route exact path="/" element={<HomePage />} />
-            </Route>
-
-            <PublicRoute exact path="/register" restricted>
-              <RegisterPage />
-            </PublicRoute>
-
-            <PublicRoute exact path="/login" redirectTo="/phonebook" restricted>
-              <LoginPage />
-            </PublicRoute>
-
-            <PrivateRoute path="/phonebook" redirectTo="/login">
-              <PhonebookPage />
-            </PrivateRoute>
-          </Suspense>
-        </Routes> */}
+            <Route
+              path="/phonebook"
+              element={
+                <PrivateRoute redirectTo="/login">
+                  <PhonebookPage />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
       </Container>
 
       <ToastContainer autoClose={5000} />

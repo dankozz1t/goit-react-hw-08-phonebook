@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useDeleteContactMutation } from '../../redux/contactsAPI';
+import { useDeleteContactMutation } from '../../redux/contacts/contactsApi/contactsAPI';
 
 import { toast } from 'react-toastify';
 import Loader from 'components/Loader';

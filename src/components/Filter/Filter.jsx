@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/filterSlice';
-import { getFilter } from '../../redux/selectors';
+import { setFilter } from '../../redux/contacts/filter/filterSlice';
+import { getFilter } from '../../redux/contacts/filter/selectors';
 
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
