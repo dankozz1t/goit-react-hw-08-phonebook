@@ -23,7 +23,6 @@ const ContactList = () => {
       return;
     }
 
-    console.log(contacts);
     if (contacts) {
       return contacts.filter(({ name }) =>
         name.toLowerCase().includes(filter.toLowerCase().trim())

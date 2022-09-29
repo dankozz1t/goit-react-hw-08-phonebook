@@ -68,7 +68,7 @@ const RegisterPage = () => {
 
   return (
     <main className="box">
-      <Section title="Singup">
+      <Section title="Signup">
         <Form onSubmit={handleFormSubmit}>
           <Row xs>
             <Col>

@@ -7,14 +7,14 @@ import Loader from './Loader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
 import AppBar from './AppBar';
 import { useSelector } from 'react-redux';
 import { getToken } from 'redux/auth/authAPI/authSlice';
 import { useFetchCurrentUserQuery } from 'redux/auth/authAPI/authAPI';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
@@ -24,52 +24,42 @@ const HomePage = lazy(() => import('../pages/HomePage'));
 
 export const App = () => {
   const token = useSelector(getToken);
-  useFetchCurrentUserQuery(null, { skip: !token });
+  const { isFetching } = useFetchCurrentUserQuery(null, { skip: !token });
 
   return (
     <>
       <Container>
         <AppBar />
-        {/* <TaskPhonebook /> */}
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route
-              path="/"
-              end
-              element={
-                <PublicRoute>
-                  <HomePage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <PublicRoute restricted>
-                  <RegisterPage />
-                </PublicRoute>
-              }
-            />
+        {!isFetching && (
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<PublicRoute redirectTo="/" />}>
+                <Route index element={<HomePage />} />
+              </Route>
 
-            <Route
-              path="/login"
-              element={
-                <PublicRoute restricted>
-                  <LoginPage />
-                </PublicRoute>
-              }
-            />
+              <Route
+                path="/register"
+                element={<PublicRoute restricted redirectTo="/" />}
+              >
+                <Route index element={<RegisterPage />} />
+              </Route>
 
-            <Route
-              path="/phonebook"
-              element={
-                <PrivateRoute redirectTo="/">
-                  <PhonebookPage />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-        </Suspense>
+              <Route
+                path="/login"
+                element={<PublicRoute restricted redirectTo="/" />}
+              >
+                <Route index element={<LoginPage />} />
+              </Route>
+
+              <Route
+                path="/phonebook"
+                element={<PrivateRoute redirectTo="/" />}
+              >
+                <Route index element={<PhonebookPage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        )}
       </Container>
 
       <ToastContainer autoClose={5000} />

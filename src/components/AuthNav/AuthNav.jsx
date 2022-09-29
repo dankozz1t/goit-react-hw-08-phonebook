@@ -6,9 +6,13 @@ import s from './AuthNav.module.css';
 const AuthNav = () => {
   return (
     <div className={s.menu}>
-      <NavLink to="/register">Sign up</NavLink>
+      <NavLink className="btn btn-primary" to="/register">
+        Sign up
+      </NavLink>
 
-      <NavLink to="/login">Log in</NavLink>
+      <NavLink className="btn btn-primary" to="/login">
+        Log in
+      </NavLink>
     </div>
   );
 };

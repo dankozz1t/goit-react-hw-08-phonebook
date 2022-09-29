@@ -8,9 +8,18 @@ import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
   const isLoggedIn = useSelector(getLoggedIn);
+
+  const navigation = isLoggedIn ? (
+    <NavLink className="btn btn-primary" to="/phonebook">
+      My Phonebook
+    </NavLink>
+  ) : (
+    <AuthNav />
+  );
+
   return (
     <main className="box">
-      <Section title="Welcome to home page!">
+      <Section title="Welcome to your personal phonebook!">
         <p>
           text example text example text example text example text example text
           example text example text example text example text example text
@@ -18,11 +27,7 @@ const HomePage = () => {
           example text example text example text example text example text
           example text example text example text example text example
         </p>
-        {isLoggedIn ? (
-          <NavLink to="/phonebook">My Phonebook</NavLink>
-        ) : (
-          <AuthNav />
-        )}
+        {navigation}
       </Section>
     </main>
   );
