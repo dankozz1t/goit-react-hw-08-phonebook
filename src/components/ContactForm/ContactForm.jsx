@@ -89,7 +89,7 @@ const ContactForm = () => {
         </Col>
         <Col xs>
           <Form.Label htmlFor="number" className="formLabel">
-            number
+            Phone
           </Form.Label>
           <Form.Control
             className="mb-2"
