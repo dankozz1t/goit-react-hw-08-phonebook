@@ -23,9 +23,12 @@ const ContactList = () => {
       return;
     }
 
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(filter.toLowerCase().trim())
-    );
+    console.log(contacts);
+    if (contacts) {
+      return contacts.filter(({ name }) =>
+        name.toLowerCase().includes(filter.toLowerCase().trim())
+      );
+    }
   }, [filter, contacts, isLoading]);
 
   if (isLoading) {
@@ -41,8 +44,8 @@ const ContactList = () => {
     return <h2 className="formLabel errorSize">Contact not found</h2>;
   }
 
-  const elements = filteredContacts.map(({ id, name, phone }) => (
-    <ContactItem key={id} id={id} name={name} phone={phone} />
+  const elements = filteredContacts.map(({ id, name, number }) => (
+    <ContactItem key={id} id={id} name={name} number={number} />
   ));
 
   return (

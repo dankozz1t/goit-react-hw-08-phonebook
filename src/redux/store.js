@@ -30,7 +30,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authSlice.reducer),
     filter: filterSlice.reducer,
     [contactsAPI.reducerPath]: contactsAPI.reducer,
-    [authAPI.reducerPath]: contactsAPI.reducer,
+    [authAPI.reducerPath]: authAPI.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -38,10 +38,11 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    authAPI.middleware,
     contactsAPI.middleware,
+    authAPI.middleware,
   ],
 });
 
 export const persistor = persistStore(store);
+
 setupListeners(store.dispatch);

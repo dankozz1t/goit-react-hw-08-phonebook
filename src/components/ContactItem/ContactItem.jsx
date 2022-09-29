@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
 
 import s from './ContactItem.module.css';
 
-const ContactItem = ({ id, name, phone }) => {
+const ContactItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting, isError }] =
     useDeleteContactMutation();
 
@@ -39,7 +39,7 @@ const ContactItem = ({ id, name, phone }) => {
           <span className={s.name}> {name} </span>
         </Col>
         <Col className={s.colPhone}>
-          <span className={s.phone}> {phone} </span>
+          <span className={s.number}> {number} </span>
         </Col>
         <Col className={s.colButton}>
           <Button
@@ -63,7 +63,7 @@ const ContactItem = ({ id, name, phone }) => {
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };
 
 export default ContactItem;

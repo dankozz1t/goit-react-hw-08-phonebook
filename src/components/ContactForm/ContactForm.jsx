@@ -20,12 +20,12 @@ import inputReducer from './inputReducer';
 import s from './ContactForm.module.css';
 
 const initialValue = {
-  phone: '',
+  number: '',
   name: '',
 };
 
 const ContactForm = () => {
-  const [{ name, phone }, dispatchReducer] = useReducer(
+  const [{ name, number }, dispatchReducer] = useReducer(
     inputReducer,
     initialValue
   );
@@ -41,7 +41,7 @@ const ContactForm = () => {
   const handleFormSubmit = e => {
     e.preventDefault();
     if (isUniqueName(name)) {
-      addContact({ name, phone });
+      addContact({ name, number });
       toast.info(`"${name}" added to your contacts`);
     }
     dispatchReducer({ type: 'reset', payload: initialValue });
@@ -88,18 +88,18 @@ const ContactForm = () => {
           />
         </Col>
         <Col xs>
-          <Form.Label htmlFor="phone" className="formLabel">
-            Phone
+          <Form.Label htmlFor="number" className="formLabel">
+            number
           </Form.Label>
           <Form.Control
             className="mb-2"
-            id="phone"
+            id="number"
             placeholder="410-371-6599"
             type="tel"
-            name="phone"
+            name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone phone must be digits and can contain spaces, dashes, parentheses and can start with +"
-            value={phone}
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            value={number}
             onChange={handleInputChange}
             required
           />

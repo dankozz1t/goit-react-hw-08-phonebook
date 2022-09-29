@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const authAPI = createApi({
   reducerPath: 'authAPI',
+
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com/',
 
@@ -13,6 +14,7 @@ export const authAPI = createApi({
       return headers;
     },
   }),
+
   tagTypes: ['auth'],
   endpoints: builder => ({
     fetchCurrentUser: builder.query({
@@ -23,7 +25,6 @@ export const authAPI = createApi({
 
     userSignup: builder.mutation({
       query: user => {
-        // console.log(user);
         return {
           url: `/users/signup`,
           method: 'POST',

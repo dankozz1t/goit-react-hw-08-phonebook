@@ -3,8 +3,8 @@ const inputReducer = (state, action) => {
     case 'name':
       return { ...state, name: action.payload };
 
-    case 'phone':
-      return { ...state, phone: action.payload };
+    case 'number':
+      return { ...state, number: action.payload };
 
     case 'reset':
       return { ...action.payload };
