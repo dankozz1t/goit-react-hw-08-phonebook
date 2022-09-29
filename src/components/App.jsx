@@ -26,8 +26,6 @@ export const App = () => {
   const token = useSelector(getToken);
   useFetchCurrentUserQuery(null, { skip: !token });
 
-  // console.log(token);
-
   return (
     <>
       <Container>

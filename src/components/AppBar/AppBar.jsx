@@ -1,5 +1,5 @@
 import AuthNav from 'components/AuthNav';
-// import Navigation from 'components/Navigation';
+import Navigation from 'components/Navigation';
 import UserMenu from 'components/UserMenu';
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -9,8 +9,8 @@ const AppBar = () => {
   const isLoggedIn = useSelector(getLoggedIn);
   // console.log(isLoggedIn);
   return (
-    <header>
-      {/* <Navigation /> */}
+    <header style={{ display: 'flex', gap: '20px' }}>
+      <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );

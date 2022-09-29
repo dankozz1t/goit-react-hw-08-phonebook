@@ -20,7 +20,7 @@ const UserMenu = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: '20px' }}>
       <p>Hello {name}!</p>
       <button type="button" onClick={handleLogoutClick}>
         Log out
