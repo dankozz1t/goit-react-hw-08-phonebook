@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import { useUserSignupMutation } from 'redux/auth/authAPI/authAPI';
+import { toast } from 'react-toastify';
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -31,7 +32,6 @@ const RegisterPage = () => {
     inputReducer,
     initialValue
   );
-
   const [register] = useUserSignupMutation();
 
   const handleInputChange = e => {
@@ -47,8 +47,12 @@ const RegisterPage = () => {
     }
 
     try {
-      await register({ name, email, password });
-      // navigate('/phonebook');
+      await register({ name, email, password }).then(resp => {
+        resp?.error?.data?.message && toast.info(`${resp.error.data.message}`);
+        resp?.error?.data?.keyPattern?.email &&
+          toast.info(`This email address already exists`);
+      });
+
       dispatchReducer({ type: 'reset', payload: initialValue });
     } catch (error) {
       console.log(error);
@@ -90,7 +94,6 @@ const RegisterPage = () => {
 
         <button type="submit">Login</button>
       </form>
-      {/* </WrapLoginForm> */}
     </>
   );
 };

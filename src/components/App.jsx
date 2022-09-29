@@ -26,7 +26,7 @@ export const App = () => {
   const token = useSelector(getToken);
   useFetchCurrentUserQuery(null, { skip: !token });
 
-  console.log(token);
+  // console.log(token);
 
   return (
     <>
@@ -65,7 +65,7 @@ export const App = () => {
             <Route
               path="/phonebook"
               element={
-                <PrivateRoute redirectTo="/login">
+                <PrivateRoute redirectTo="/">
                   <PhonebookPage />
                 </PrivateRoute>
               }

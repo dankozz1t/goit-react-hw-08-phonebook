@@ -7,7 +7,7 @@ import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(getLoggedIn);
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
   return (
     <header>
       {/* <Navigation /> */}

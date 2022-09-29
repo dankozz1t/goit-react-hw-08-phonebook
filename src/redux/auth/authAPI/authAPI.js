@@ -7,7 +7,6 @@ export const authAPI = createApi({
 
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
-      console.log(token);
       if (token) {
         headers.set('authorization', `Bearer ${token}`);
       }
@@ -24,7 +23,7 @@ export const authAPI = createApi({
 
     userSignup: builder.mutation({
       query: user => {
-        console.log(user);
+        // console.log(user);
         return {
           url: `/users/signup`,
           method: 'POST',

@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import { useUserLoginMutation } from 'redux/auth/authAPI/authAPI';
+import { toast } from 'react-toastify';
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -29,7 +29,6 @@ const LoginPage = () => {
     initialValue
   );
 
-  // const navigate = useNavigate();
   const [login] = useUserLoginMutation();
 
   const handleInputChange = e => {
@@ -45,8 +44,10 @@ const LoginPage = () => {
     }
 
     try {
-      await login({ email, password });
-      // navigate('/phonebook');
+      await login({ email, password }).then(resp => {
+        resp?.error && toast.info(`Error! Wrong email or password`);
+      });
+
       dispatchReducer({ type: 'reset', payload: initialValue });
     } catch (error) {
       console.log(error);
@@ -78,7 +79,6 @@ const LoginPage = () => {
 
         <button type="submit">Login</button>
       </form>
-      {/* </WrapLoginForm> */}
     </>
   );
 };
