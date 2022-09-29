@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/996.396cce37.chunk.js","mappings":"uMAKA,EAHsB,WACpB,OAAO,yCACR,C","sources":["pages/PhonebookPage/PhonebookPage.jsx"],"sourcesContent":["import React from 'react';\n\nconst PhonebookPage = () => {\n  return <h2>PhonebookPage</h2>;\n};\nexport default PhonebookPage;\n"],"names":[],"sourceRoot":""}
