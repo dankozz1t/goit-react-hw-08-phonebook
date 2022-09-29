@@ -4,6 +4,10 @@ import { useUserLogoutMutation } from 'redux/auth/authAPI/authAPI';
 import { getUserName } from 'redux/auth/authAPI/authSlice';
 import { useNavigate } from 'react-router-dom';
 
+import Button from 'react-bootstrap/Button';
+
+import s from './UserMenu.module.css';
+
 const UserMenu = () => {
   const name = useSelector(getUserName);
   const [logout] = useUserLogoutMutation();
@@ -20,11 +24,13 @@ const UserMenu = () => {
   };
 
   return (
-    <div style={{ display: 'flex', gap: '20px' }}>
-      <p>Hello {name}!</p>
-      <button type="button" onClick={handleLogoutClick}>
+    <div className={s.menu}>
+      <p className={s.greeting}>
+        Hello, <span className={s.name}>{name}</span>!
+      </p>
+      <Button variant="primary" type="button" onClick={handleLogoutClick}>
         Log out
-      </button>
+      </Button>
     </div>
   );
 };

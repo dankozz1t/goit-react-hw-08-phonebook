@@ -7,7 +7,7 @@ import Loader from './Loader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// import TaskPhonebook from './TaskPhonebook';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';

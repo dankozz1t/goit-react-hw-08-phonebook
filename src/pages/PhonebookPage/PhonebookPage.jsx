@@ -5,12 +5,9 @@ import Filter from '../../components/Filter';
 import ContactList from '../../components/ContactList';
 import { ConfettiContainer } from '../../components/Confetti/Confetti';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import s from '../../components/TaskPhonebook/TaskPhonebook.module.css';
-
 const PhonebookPage = () => {
   return (
-    <div className={s.box}>
+    <main className="box">
       <Section title="Phonebook">
         <ContactForm />
       </Section>
@@ -19,7 +16,7 @@ const PhonebookPage = () => {
 
       <ContactList />
       <ConfettiContainer />
-    </div>
+    </main>
   );
 };
 export default PhonebookPage;

@@ -5,11 +5,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 
+import s from './AppBar.module.css';
+
 const AppBar = () => {
   const isLoggedIn = useSelector(getLoggedIn);
-  // console.log(isLoggedIn);
+  const headerClass = `${s.box} ${s.header}`;
   return (
-    <header style={{ display: 'flex', gap: '20px' }}>
+    <header className={headerClass}>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>

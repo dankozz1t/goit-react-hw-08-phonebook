@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 
+import s from './Navigation.module.css';
+
 const Navigation = () => {
   const isLoggedIn = useSelector(getLoggedIn);
   return (
-    <nav style={{ display: 'flex', gap: '20px' }}>
+    <nav className={s.nav}>
       <NavLink to="/">Home</NavLink>
       {isLoggedIn && <NavLink to="/phonebook">My Phonebook</NavLink>}
     </nav>
