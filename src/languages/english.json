@@ -1,0 +1,10 @@
+{ 
+    "home_greeting": "Welcome to your personal phonebook!",
+    "home_text": "text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text text example text example text",
+    "btn_phonebook": "My Phonebook",
+    "btn_home": "Home",
+    "header_greeting": "Hello, ",
+    "btn_logout": "Log out",
+    "btn_singup": "Sing up",
+    "btn_login": "Log in"
+}

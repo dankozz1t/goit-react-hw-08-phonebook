@@ -97,3 +97,7 @@ button {
     padding: 25px;
   }
 }
+
+.btn {
+  /* width: max-content; */
+}

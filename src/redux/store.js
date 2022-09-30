@@ -6,6 +6,7 @@ import { authSlice } from './auth/authAPI/authSlice';
 
 import { contactsAPI } from './contacts/contactsApi/contactsAPI';
 import { filterSlice } from './contacts/filter/filterSlice';
+import { languageSlice } from './language/languageSlice';
 
 import storage from 'redux-persist/lib/storage';
 import {
@@ -19,16 +20,17 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-const authPersistConfig = {
-  key: 'auth',
+const persistConfig = {
+  key: 'phonebook',
   storage: storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'language'],
 };
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authSlice.reducer),
+    auth: persistReducer(persistConfig, authSlice.reducer),
     filter: filterSlice.reducer,
+    language: persistReducer(persistConfig, languageSlice.reducer),
     [contactsAPI.reducerPath]: contactsAPI.reducer,
     [authAPI.reducerPath]: authAPI.reducer,
   },

@@ -1,17 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 
 import Section from 'components/Section';
 import AuthNav from 'components/AuthNav';
 import { NavLink } from 'react-router-dom';
+import { getLanguage } from 'redux/language/selectors';
 
 const HomePage = () => {
-  const isLoggedIn = useSelector(getLoggedIn);
+  const isLoggedIn = useSelector(getLoggedIn, shallowEqual);
+  const lang = useSelector(getLanguage, shallowEqual);
 
   const navigation = isLoggedIn ? (
     <NavLink className="btn btn-primary" to="/phonebook">
-      My Phonebook
+      {lang.btn_phonebook}
     </NavLink>
   ) : (
     <AuthNav />
@@ -19,14 +21,8 @@ const HomePage = () => {
 
   return (
     <main className="box">
-      <Section title="Welcome to your personal phonebook!">
-        <p>
-          text example text example text example text example text example text
-          example text example text example text example text example text
-          example text example text example text example text example text
-          example text example text example text example text example text
-          example text example text example text example text example
-        </p>
+      <Section title={lang.home_greeting}>
+        <p>{lang.home_text}</p>
         {navigation}
       </Section>
     </main>

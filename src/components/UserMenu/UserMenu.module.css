@@ -14,3 +14,18 @@
 .name {
   font-weight: 700;
 }
+
+@media screen and (max-width: 480px) {
+  .menu {
+    flex-direction: row;
+
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -4,3 +4,18 @@
   align-items: center;
   gap: 50px;
 }
+
+@media screen and (max-width: 480px) {
+  .nav {
+    flex-direction: row;
+
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+    gap: 11px;
+  }
+}
