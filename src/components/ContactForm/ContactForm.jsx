@@ -18,6 +18,8 @@ import Row from 'react-bootstrap/Row';
 import inputReducer from './inputReducer';
 
 import s from './ContactForm.module.css';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
 
 const initialValue = {
   number: '',
@@ -25,6 +27,8 @@ const initialValue = {
 };
 
 const ContactForm = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
+
   const [{ name, number }, dispatchReducer] = useReducer(
     inputReducer,
     initialValue
@@ -42,7 +46,7 @@ const ContactForm = () => {
     e.preventDefault();
     if (isUniqueName(name)) {
       addContact({ name, number });
-      toast.info(`"${name}" added to your contacts`);
+      toast.info(`"${name}" ${lang.main_addContactMessage}`);
     }
     dispatchReducer({ type: 'reset', payload: initialValue });
   };
@@ -50,7 +54,7 @@ const ContactForm = () => {
   const isUniqueName = newName => {
     const searchUnique = newName.toLowerCase();
     if (contacts.find(({ name }) => name.toLowerCase() === searchUnique)) {
-      toast.info(`"${newName}" is already in contacts`);
+      toast.info(`"${newName}" ${lang.main_uniqueContactNameMessage}`);
       return false;
     }
     return true;
@@ -62,7 +66,7 @@ const ContactForm = () => {
   };
 
   if (isError) {
-    toast.info(`Error`);
+    toast.info(lang.main_fetchErrorMessage);
   }
 
   const classNameRow = `align-items-center ${s.row}`;
@@ -72,16 +76,16 @@ const ContactForm = () => {
       <Row className={classNameRow}>
         <Col xs>
           <Form.Label htmlFor="name" className="formLabel">
-            Name
+            {lang.main_labelInputName}
           </Form.Label>
           <Form.Control
             className="mb-2"
             id="name"
-            placeholder="Alex"
+            placeholder={lang.main_placeholderInputName}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            title={lang.main_titleInputName}
             value={name}
             onChange={handleInputChange}
             required
@@ -89,16 +93,16 @@ const ContactForm = () => {
         </Col>
         <Col xs>
           <Form.Label htmlFor="number" className="formLabel">
-            Phone
+            {lang.main_labelInputPhone}
           </Form.Label>
           <Form.Control
             className="mb-2"
             id="number"
-            placeholder="410-371-6599"
+            placeholder={lang.main_placeholderInputPhone}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            title={lang.main_titleInputPhone}
             value={number}
             onChange={handleInputChange}
             required
@@ -110,7 +114,7 @@ const ContactForm = () => {
           {isDeleting ? (
             <Loader width="45" height="10" color="#fff" />
           ) : (
-            <span>Add Contact</span>
+            <span>{lang.main_btnAddContact}</span>
           )}
         </Button>
       </div>

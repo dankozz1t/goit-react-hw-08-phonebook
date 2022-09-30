@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Section from 'components/Section';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -31,6 +33,7 @@ const initialValue = {
 };
 
 const LoginPage = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
   const [{ email, password }, dispatchReducer] = useReducer(
     inputReducer,
     initialValue
@@ -63,21 +66,21 @@ const LoginPage = () => {
 
   return (
     <main className="box">
-      <Section title="Login">
+      <Section title={lang.login_tittle}>
         <Form onSubmit={handleFormSubmit}>
           <Row xs>
             <Col>
               <Form.Label htmlFor="email" className="formLabel">
-                Email
+                {lang.login_labelInputEmail}
               </Form.Label>
               <Form.Control
                 className="mb-2"
                 id="email"
-                placeholder="alex@gmail.com"
+                placeholder={lang.login_placeholderInputEmail}
                 type="email"
                 name="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                title="Enter your email"
+                title={lang.login_titleInputEmail}
                 value={email}
                 onChange={handleInputChange}
                 required
@@ -87,16 +90,16 @@ const LoginPage = () => {
           <Row xs>
             <Col>
               <Form.Label htmlFor="password" className="formLabel">
-                Password
+                {lang.login_labelInputPassword}
               </Form.Label>
               <Form.Control
                 className="mb-2"
                 id="password"
-                placeholder="hdsk23das"
+                placeholder={lang.login_placeholderInputPassword}
                 type="password"
                 name="password"
                 pattern=".{7,16}"
-                title="Enter password minimum 7 length"
+                title={lang.login_titleInputPassword}
                 value={password}
                 onChange={handleInputChange}
                 required
@@ -108,7 +111,7 @@ const LoginPage = () => {
               {isLoading ? (
                 <Loader width="45" height="10" color="#fff" />
               ) : (
-                <span>Login</span>
+                <span>{lang.btn_login}</span>
               )}
             </Button>
           </div>

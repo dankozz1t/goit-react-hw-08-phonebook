@@ -4,11 +4,15 @@ import ContactForm from '../../components/ContactForm';
 import Filter from '../../components/Filter';
 import ContactList from '../../components/ContactList';
 import { ConfettiContainer } from '../../components/Confetti/Confetti';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
 
 const PhonebookPage = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
+
   return (
     <main className="box">
-      <Section title="Phonebook">
+      <Section title={lang.main_phonebook}>
         <ContactForm />
       </Section>
 

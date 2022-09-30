@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Section from 'components/Section';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -35,6 +37,7 @@ const initialValue = {
 };
 
 const RegisterPage = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
   const [{ name, email, password }, dispatchReducer] = useReducer(
     inputReducer,
     initialValue
@@ -68,21 +71,21 @@ const RegisterPage = () => {
 
   return (
     <main className="box">
-      <Section title="Signup">
+      <Section title={lang.singup_tittle}>
         <Form onSubmit={handleFormSubmit}>
           <Row xs>
             <Col>
               <Form.Label htmlFor="name" className="formLabel">
-                Name
+                {lang.singup_labelInputName}
               </Form.Label>
               <Form.Control
                 className="mb-2"
                 id="name"
-                placeholder="Alex"
+                placeholder={lang.singup_placeholderInputName}
                 type="text"
                 name="name"
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                title={lang.singup_titleInputName}
                 value={name}
                 onChange={handleInputChange}
                 required
@@ -92,16 +95,16 @@ const RegisterPage = () => {
           <Row xs>
             <Col>
               <Form.Label htmlFor="email" className="formLabel">
-                Email
+                {lang.singup_labelInputEmail}
               </Form.Label>
               <Form.Control
                 className="mb-2"
                 id="email"
-                placeholder="alex@gmail.com"
+                placeholder={lang.singup_placeholderInputEmail}
                 type="email"
                 name="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                title="Enter your email"
+                title={lang.singup_titleInputEmail}
                 value={email}
                 onChange={handleInputChange}
                 required
@@ -111,16 +114,16 @@ const RegisterPage = () => {
           <Row xs>
             <Col>
               <Form.Label htmlFor="password" className="formLabel">
-                Password
+                {lang.singup_labelInputPassword}
               </Form.Label>
               <Form.Control
                 className="mb-2"
                 id="password"
-                placeholder="hdsk23das"
+                placeholder={lang.singup_placeholderInputPassword}
                 type="password"
                 name="password"
                 pattern=".{7,16}"
-                title="Enter password minimum 7 length"
+                title={lang.singup_titleInputPassword}
                 value={password}
                 onChange={handleInputChange}
                 required
@@ -132,7 +135,7 @@ const RegisterPage = () => {
               {isLoading ? (
                 <Loader width="45" height="10" color="#fff" />
               ) : (
-                <span>Login</span>
+                <span>{lang.btn_singup}</span>
               )}
             </Button>
           </div>

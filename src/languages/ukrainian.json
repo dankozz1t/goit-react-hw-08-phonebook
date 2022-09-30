@@ -1,10 +1,56 @@
-{ 
-    "home_greeting": "Ласкаво просимо до твоєї персональної телефонної книги!",
-    "home_text": "текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад ",
-    "btn_phonebook": "Телефонна книга",
-    "btn_home": "Головна",
-    "header_greeting": "Привіт, ",
-    "btn_logout": "Вийти",
-    "btn_singup": "Зареєструватись",
-    "btn_login": "Увійти"
+{
+  "home_greeting": "Ласкаво просимо до твоєї персональної телефонної книги!",
+  "home_text": "текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад текст приклад ",
+
+  "btn_phonebook": "Телефонна книга",
+  "btn_home": "Головна",
+
+  "header_greeting": "Привіт, ",
+
+  "btn_logout": "Вийти",
+  "btn_singup": "Зареєструватись",
+  "btn_login": "Увійти",
+
+  "main_phonebook": "Телефонна книга",
+  "main_addContactMessage": "додано до ваших контактів",
+  "main_uniqueContactNameMessage": "вже в контактах",
+  "main_fetchErrorMessage": "Помилка",
+
+  "main_labelInputName": "Ім'я",
+  "main_placeholderInputName": "Алекс",
+  "main_titleInputName": "Назва може містити лише літери, апостроф, тире та пробіли. Наприклад Дмитро, Тарас Шевченко, Алекс-Тейлор Данько",
+
+  "main_labelInputPhone": "Телефон",
+  "main_placeholderInputPhone": "0938827487",
+  "main_titleInputPhone": "Номер телефону має складатися з цифр і може містити пробіли, тире, круглі дужки та починатися з +",
+
+  "main_btnAddContact": "Додати контакт",
+
+  "main_labelInputFilter": "Пошук контактів за іменами",
+  "main_placeholderInputFilter": "Алекс",
+  "main_titleInputFilter": "Пошук контактів за іменами",
+
+  "login_tittle": "Увійти в телефонну книгу",
+
+  "login_labelInputEmail": "Електронна пошта",
+  "login_placeholderInputEmail": "alex@gmail.com",
+  "login_titleInputEmail": "Введіть адресу електронної пошти",
+
+  "login_labelInputPassword": "Пароль",
+  "login_placeholderInputPassword": "hdsk23das",
+  "login_titleInputPassword": "Введіть пароль довжиною мінімум 7",
+
+  "singup_tittle": "Реєстрація",
+
+  "singup_labelInputName": "Ім'я",
+  "singup_placeholderInputName": "Алекс",
+  "singup_titleInputName": "Назва може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян",
+
+  "singup_labelInputEmail": "Електронна пошта",
+  "singup_placeholderInputEmail": "alex@gmail.com",
+  "singup_titleInputEmail": "Введіть адресу електронної пошти",
+
+  "singup_labelInputPassword": "Пароль",
+  "singup_placeholderInputPassword": "hdsk23das",
+  "singup_titleInputPassword": "Введіть пароль довжиною мінімум 7"
 }
