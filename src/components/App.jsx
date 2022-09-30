@@ -16,7 +16,7 @@ import { useFetchCurrentUserQuery } from 'redux/auth/authAPI/authAPI';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const SingupPage = lazy(() => import('../pages/SingupPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 
 const PhonebookPage = lazy(() => import('../pages/PhonebookPage'));
@@ -41,7 +41,7 @@ export const App = () => {
                 path="/register"
                 element={<PublicRoute restricted redirectTo="/" />}
               >
-                <Route index element={<RegisterPage />} />
+                <Route index element={<SingupPage />} />
               </Route>
 
               <Route

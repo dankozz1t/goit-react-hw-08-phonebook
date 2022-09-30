@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/contacts/filter/filterSlice';
-import { getFilter } from '../../redux/contacts/filter/selectors';
+import { setFilter } from 'redux/contacts/filter/filterSlice';
+import { getFilter } from 'redux/contacts/filter/selectors';
+import { getLanguage } from 'redux/language/selectors';
 
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { getLanguage } from 'redux/language/selectors';
 
 const Filter = () => {
   const lang = useSelector(getLanguage, shallowEqual);

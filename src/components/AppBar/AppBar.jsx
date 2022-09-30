@@ -1,8 +1,10 @@
+import React from 'react';
+
 import AuthNav from 'components/AuthNav';
 import Navigation from 'components/Navigation';
 import Switch from 'components/Switch';
 import UserMenu from 'components/UserMenu';
-import React from 'react';
+
 import { useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 

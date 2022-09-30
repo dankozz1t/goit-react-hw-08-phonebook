@@ -1,25 +1,26 @@
 import React, { useEffect, useReducer } from 'react';
 
-import {
-  useAddContactMutation,
-  useFetchContactsQuery,
-} from '../../redux/contacts/contactsApi/contactsAPI';
-
 import { toast } from 'react-toastify';
-
 import { login } from '../Confetti/utils';
 
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
+
 import Loader from 'components/Loader';
+
+import inputReducer from './inputReducer';
 
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import inputReducer from './inputReducer';
+
+import {
+  useAddContactMutation,
+  useFetchContactsQuery,
+} from '../../redux/contacts/contactsApi/contactsAPI';
 
 import s from './ContactForm.module.css';
-import { shallowEqual, useSelector } from 'react-redux';
-import { getLanguage } from 'redux/language/selectors';
 
 const initialValue = {
   number: '',

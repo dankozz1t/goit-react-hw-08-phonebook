@@ -1,16 +1,15 @@
 import React, { useMemo } from 'react';
 
+import { useSelector, shallowEqual } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contacts/contactsApi/contactsAPI';
+import { getFilter } from 'redux/contacts/filter/selectors';
+import { toast } from 'react-toastify';
 
 import ContactItem from '../ContactItem/';
 
-import { useSelector, shallowEqual } from 'react-redux';
-
-import { getFilter } from '../../redux/contacts/filter/selectors';
 import Loader from 'components/Loader';
 
 import ListGroup from 'react-bootstrap/ListGroup';
-import { toast } from 'react-toastify';
 
 import s from './ContactList.module.css';
 
