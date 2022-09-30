@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import PasswordInput from 'components/PasswordInput/PasswordInput';
 
 const initialValue = {
   email: '',
@@ -72,23 +73,13 @@ const Login = () => {
         </Col>
       </Row>
       <Row xs>
-        <Col>
-          <Form.Label htmlFor="password" className="formLabel">
-            {lang.login_labelInputPassword}
-          </Form.Label>
-          <Form.Control
-            className="mb-2"
-            id="password"
-            placeholder={lang.login_placeholderInputPassword}
-            type="password"
-            name="password"
-            pattern=".{7,16}"
-            title={lang.login_titleInputPassword}
-            value={password}
-            onChange={handleInputChange}
-            required
-          />
-        </Col>
+        <PasswordInput
+          label={lang.login_labelInputPassword}
+          placeholder={lang.login_placeholderInputPassword}
+          title={lang.login_titleInputPassword}
+          onChange={handleInputChange}
+          password={password}
+        />
       </Row>
       <div className="d-grid gap-2">
         <Button variant="primary" type="submit" disabled={isLoading}>
