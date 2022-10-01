@@ -8,6 +8,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from 'redux/language/languageSlice';
 import { FlagIcon } from 'react-flag-kit';
 
+import capitalizeFirstLetter from 'helpers/capitalizeFirstLetter';
 import languageList from 'languages/languageList';
 
 import s from './Switch.module.css';
@@ -39,7 +40,7 @@ const Switch = () => {
               className={s.dropdownItem}
             >
               <FlagIcon code={code} size={30} />
-              {name[0].toUpperCase() + name.slice(1).toLowerCase()}
+              {capitalizeFirstLetter(name)}
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>

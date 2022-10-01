@@ -10,7 +10,7 @@ const SingupPage = () => {
   const lang = useSelector(getLanguage, shallowEqual);
 
   return (
-    <main className="box">
+    <main className="box mainWidth">
       <Section title={lang.singup_tittle}>
         <Singup />
       </Section>

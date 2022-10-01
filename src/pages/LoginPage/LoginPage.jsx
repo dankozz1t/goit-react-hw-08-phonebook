@@ -10,7 +10,7 @@ const LoginPage = () => {
   const lang = useSelector(getLanguage, shallowEqual);
 
   return (
-    <main className="box">
+    <main className="box mainWidth">
       <Section title={lang.login_tittle}>
         <Login />
       </Section>

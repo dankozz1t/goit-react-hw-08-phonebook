@@ -34,6 +34,9 @@ export const store = configureStore({
     [contactsAPI.reducerPath]: contactsAPI.reducer,
     [authAPI.reducerPath]: authAPI.reducer,
   },
+
+  devTools: process.env.NODE_ENV === 'development',
+
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
       serializableCheck: {

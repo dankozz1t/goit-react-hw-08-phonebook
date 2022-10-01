@@ -1,10 +1,13 @@
 import React from 'react';
 import AuthNav from 'components/AuthNav';
+import ListExamples from './ListExamples';
 
 import { NavLink } from 'react-router-dom';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 import { getLanguage } from 'redux/language/selectors';
+
+import s from './Home.module.css';
 
 const Home = () => {
   const isLoggedIn = useSelector(getLoggedIn, shallowEqual);
@@ -12,7 +15,10 @@ const Home = () => {
 
   return (
     <>
-      <p className="marginBottom">{lang.home_text}</p>
+      <h2 className={s.text}>Що тут можна робити?</h2>
+
+      <ListExamples />
+
       {isLoggedIn ? (
         <NavLink className="btn btn-primary" to="/phonebook">
           {lang.btn_phonebook}

@@ -93,8 +93,16 @@ button {
   text-align: center;
 }
 
+.mainWidth {
+  width: 500px;
+}
+
 @media screen and (max-width: 540px) {
   .box {
     padding: 25px;
+  }
+
+  .mainWidth {
+    width: auto;
   }
 }
