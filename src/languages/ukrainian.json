@@ -15,6 +15,7 @@
   "main_addContactMessage": "додано до ваших контактів",
   "main_uniqueContactNameMessage": "вже в контактах",
   "main_fetchErrorMessage": "Помилка",
+  "main_contactNotFound": "Контакт не знайдено",
 
   "main_labelInputName": "Ім'я",
   "main_placeholderInputName": "Алекс",

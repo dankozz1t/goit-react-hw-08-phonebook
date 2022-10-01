@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { useFetchContactsQuery } from 'redux/contacts/contactsApi/contactsAPI';
 import { getFilter } from 'redux/contacts/filter/selectors';
+import { getLanguage } from 'redux/language/selectors';
 import { toast } from 'react-toastify';
 
 import ContactItem from '../ContactItem/';
@@ -14,6 +15,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import s from './ContactList.module.css';
 
 const ContactList = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
+
   const filter = useSelector(getFilter, shallowEqual);
   const { data: contacts, isLoading, isError } = useFetchContactsQuery();
 
@@ -35,11 +38,13 @@ const ContactList = () => {
 
   if (isError) {
     toast.info(`Error`);
-    return <h2 className="formLabel errorSize">ERROR</h2>;
+    return (
+      <h2 className="formLabel errorSize">{lang.main_fetchErrorMessage}</h2>
+    );
   }
 
   if (filteredContacts.length === 0) {
-    return <h2 className="formLabel errorSize">Contact not found</h2>;
+    return <h2 className="formLabel errorSize">{lang.main_contactNotFound}</h2>;
   }
 
   const elements = filteredContacts.map(({ id, name, number }) => (

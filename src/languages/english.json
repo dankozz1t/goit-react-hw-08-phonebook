@@ -15,6 +15,7 @@
   "main_addContactMessage": "added to your contacts",
   "main_uniqueContactNameMessage": "is already in contacts",
   "main_fetchErrorMessage": "Error",
+  "main_contactNotFound": "Contact not found",
 
   "main_labelInputName": "Name",
   "main_placeholderInputName": "Alex",
