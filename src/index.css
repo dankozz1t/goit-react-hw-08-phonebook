@@ -82,6 +82,7 @@ button {
   height: 100%;
   max-width: 900px;
 
+  z-index: 1;
   background: rgba(255, 255, 255, 0.3);
   padding: 3em;
   border-radius: 20px;
@@ -96,8 +97,4 @@ button {
   .box {
     padding: 25px;
   }
-}
-
-.btn {
-  /* width: max-content; */
 }

@@ -1,33 +1,50 @@
 import React from 'react';
 
 import Form from 'react-bootstrap/Form';
+import Dropdown from 'react-bootstrap/Dropdown';
 
-import { getLanguageList, getLanguageName } from 'redux/language/selectors';
+import { getLanguageName } from 'redux/language/selectors';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from 'redux/language/languageSlice';
+import { FlagIcon } from 'react-flag-kit';
+
+import languageList from 'languages/languageList';
+
+import s from './Switch.module.css';
 
 const Switch = () => {
   const languageName = useSelector(getLanguageName, shallowEqual);
-  const languageList = useSelector(getLanguageList, shallowEqual);
+
   const dispatch = useDispatch();
 
-  const handleChange = ({ target: { value } }) => {
-    dispatch(setLanguage(value));
+  const handleLangOnSelect = name => {
+    dispatch(setLanguage(name));
   };
 
   return (
-    <Form.Select
-      style={{ width: 'auto' }}
-      defaultValue={languageName}
-      aria-label="Languages select"
-      onChange={handleChange}
-    >
-      {languageList.map(langItem => (
-        <option key={langItem} value={langItem}>
-          {langItem}
-        </option>
-      ))}
-    </Form.Select>
+    <Form aria-label="Languages select">
+      <Dropdown onSelect={handleLangOnSelect}>
+        <Dropdown.Toggle className={s.dropdownToggle}>
+          <FlagIcon
+            code={languageList.find(item => item.name === languageName).code}
+            size={30}
+          />
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu className={s.dropdownMenu}>
+          {languageList.map(({ name, code }) => (
+            <Dropdown.Item
+              key={code}
+              eventKey={name}
+              className={s.dropdownItem}
+            >
+              <FlagIcon code={code} size={30} />
+              {name[0].toUpperCase() + name.slice(1).toLowerCase()}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+    </Form>
   );
 };
 
