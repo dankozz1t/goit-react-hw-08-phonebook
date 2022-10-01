@@ -27,7 +27,8 @@
   opacity: 0.7 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
-add flags into btn tranclation .dropdownItem:hover {
+
+.dropdownItem:hover {
   color: #212529 !important;
   opacity: 0.8 !important;
 }
