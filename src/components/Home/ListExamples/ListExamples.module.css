@@ -48,3 +48,13 @@
   text-decoration: none;
   color: black;
 }
+
+.imgPosition {
+  display: block;
+
+  border-radius: 12px;
+
+  text-align: start;
+  margin-left: 36px;
+  padding: 6px;
+}

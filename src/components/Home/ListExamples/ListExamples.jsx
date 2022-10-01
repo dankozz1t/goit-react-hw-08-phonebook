@@ -18,6 +18,12 @@ const ListExamples = () => {
               зберігатись на базі даних та буде доступний з любого пристрою.
             </p>
 
+            <img
+              className={s.imgPosition}
+              width="600"
+              src="https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif"
+              alt="demonstration create account"
+            />
             <p className={classNames(s.textPosition, s.textWarning)}>
               <strong>Увага!</strong> Це навчальний проєкт, база даних очищує
               протягом місяці. Також будь ласка не використовуйте ваші реальні

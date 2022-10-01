@@ -52,5 +52,7 @@
 
   "singup_labelInputPassword": "Пароль",
   "singup_placeholderInputPassword": "hdsk23das",
-  "singup_titleInputPassword": "Введіть пароль довжиною мінімум 7"
+  "singup_titleInputPassword": "Введіть пароль довжиною мінімум 7",
+
+  "demo_singup": "https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif"
 }
