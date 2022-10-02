@@ -39,14 +39,14 @@ export const App = () => {
 
               <Route
                 path="/register"
-                element={<PublicRoute restricted redirectTo="/" />}
+                element={<PublicRoute restricted redirectTo="/phonebook" />}
               >
                 <Route index element={<SingupPage />} />
               </Route>
 
               <Route
                 path="/login"
-                element={<PublicRoute restricted redirectTo="/" />}
+                element={<PublicRoute restricted redirectTo="/phonebook" />}
               >
                 <Route index element={<LoginPage />} />
               </Route>
