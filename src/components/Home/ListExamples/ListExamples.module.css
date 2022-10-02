@@ -86,12 +86,21 @@
   .textPosition {
     font-size: 12px;
     margin-left: 0px;
-    padding: 0px;
+    padding: 5px;
   }
 
   .imgPosition {
     width: 100%;
     margin-left: 0px;
+    margin-bottom: 5px;
     padding: 0px;
+  }
+
+  .listLink {
+    justify-content: center;
+  }
+
+  .languageList {
+    margin-left: 0px;
   }
 }
