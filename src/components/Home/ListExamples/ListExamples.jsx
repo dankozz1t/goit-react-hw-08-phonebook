@@ -1,13 +1,16 @@
 import React from 'react';
 import Toggle from 'Animations/Toggle/Toggle';
 
-import s from './ListExamples.module.css';
 import classNames from 'classnames';
 import languageList from 'languages/languageList';
+
 import { FlagIcon } from 'react-flag-kit';
 import { FaTelegram, FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
+
 import { shallowEqual, useSelector } from 'react-redux';
 import { getLanguage } from 'redux/language/selectors';
+
+import s from './ListExamples.module.css';
 
 const ListExamples = () => {
   const lang = useSelector(getLanguage, shallowEqual);
