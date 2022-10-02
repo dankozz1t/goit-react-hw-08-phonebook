@@ -53,5 +53,31 @@
 
   "singup_labelInputPassword": "Password",
   "singup_placeholderInputPassword": "hdsk23das",
-  "singup_titleInputPassword": "Enter your password minimum 7 length"
+  "singup_titleInputPassword": "Enter your password minimum 7 length",
+
+  
+  "demo_title": "What can be done here?",
+  "demo_warningTitle": "Warning!",
+  "demo_createAccountTitle": "Create your own account",
+  "demo_createAccountText": " You can create your personal account! It will be stored in the database and will be accessible from any device.",
+  "demo_createAccountGif": "https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif",
+  "demo_createAccountGifAlt": "gif video how to register",
+  "demo_createAccountWarning": " This is an educational project, the database is cleaned within a month. Also, please don't use your real passwords, because it's on...",
+
+  "demo_crudContactTitle": "Add and delete contacts",
+  "demo_crudContactText": "You can add and remove contacts from your phone book!",
+
+  "demo_findContactTitle": "Search contacts by name",
+  "demo_findContactText": "Tired of scrolling down for 10 minutes to find Elon Musk? You can now search for contacts by name! And it will take just 3.1415926 milliseconds!",
+  "demo_findContactWarning": " You can spend the saved time on writing to the author how cool he is",
+
+  "demo_switchLanguageTitle": "Switch language",
+  "demo_switchLanguageText": "Still don't know Ukrainian? What a pity..... But we made a language switch just for you!",
+  "demo_switchLanguageSecTitle": "Currently available languages:",
+
+  "demo_enjoyDesignTitle": "Enjoy the design",
+  "demo_enjoyDesignText": "Oh, how iridescent the background is... Oh, how beautifully the buttons stick... Oh, what a cool spinner",
+
+  "demo_thankAuthorTitle": "Thank the author",
+  "demo_thankAuthorText": "  Well, if you've already poked here so confidently, you should also write me a postcard"
 }

@@ -5,66 +5,56 @@ import s from './ListExamples.module.css';
 import classNames from 'classnames';
 import languageList from 'languages/languageList';
 import { FlagIcon } from 'react-flag-kit';
-import { FaTelegram } from 'react-icons/fa';
+import { FaTelegram, FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getLanguage } from 'redux/language/selectors';
 
 const ListExamples = () => {
+  const lang = useSelector(getLanguage, shallowEqual);
+
   return (
     <ul className={s.list}>
       <li className={s.item}>
-        <Toggle title="Створити власний аккаунт">
+        <Toggle title={lang.demo_createAccountTitle}>
           <div className={s.createBox}>
-            <p className={s.textPosition}>
-              Ви можете створити свій персональний обліковий запис! Він буде
-              зберігатись на базі даних та буде доступний з любого пристрою.
-            </p>
-
+            <p className={s.textPosition}>{lang.demo_createAccountText}</p>
             <img
               className={s.imgPosition}
               width="600"
-              src="https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif"
-              alt="demonstration create account"
+              src={lang.demo_createAccountGif}
+              alt={lang.demo_createAccountGifAlt}
             />
             <p className={classNames(s.textPosition, s.textWarning)}>
-              <strong>Увага!</strong> Це навчальний проєкт, база даних очищує
-              протягом місяці. Також будь ласка не використовуйте ваші реальні
-              паролі, бо ну його на...
+              <strong>{lang.demo_warningTitle}</strong>
+              {lang.demo_createAccountWarning}
             </p>
           </div>
         </Toggle>
       </li>
       <li className={s.item}>
-        <Toggle title="Додавати та видаляти контакти">
+        <Toggle title={lang.demo_crudContactTitle}>
           <div className={s.createBox}>
-            <p className={s.textPosition}>
-              Ви можете додавати та видаляти контакти з вашої телефонної книги!
-            </p>
+            <p className={s.textPosition}>{lang.demo_crudContactText}</p>
           </div>
         </Toggle>
       </li>
       <li className={s.item}>
-        <Toggle title="Шукати контактів по імені">
+        <Toggle title={lang.demo_findContactTitle}>
           <div className={s.createBox}>
-            <p className={s.textPosition}>
-              Задовбались скролити вниз по 10 хвилин, щоб знайти
-              <b> Тараса Шевченко?</b> Тепер ви можете шукати контактів по
-              імені! І це займе всего навсяго 3,1415926 мілісекунди!
-            </p>
+            <p className={s.textPosition}>{lang.demo_findContactText}</p>
             <p className={classNames(s.textPosition, s.textWarning)}>
-              <strong>Увага!</strong> Збережений час ви можете витратити на те,
-              щоб написати автору який він класний
+              <strong>{lang.demo_warningTitle}</strong>
+              {lang.demo_findContactWarning}
             </p>
           </div>
         </Toggle>
       </li>
       <li className={s.item}>
-        <Toggle title="Перемикати мову">
+        <Toggle title={lang.demo_switchLanguageTitle}>
           <div className={s.createBox}>
+            <p className={s.textPosition}>{lang.demo_switchLanguageText}</p>
             <p className={s.textPosition}>
-              Все ще не знаєте англійської? Як шкода..... Але саме для Тебе ми
-              зробили перемикач мов!
-            </p>
-            <p className={s.textPosition}>
-              <b>Наразі доступні мови:</b>
+              <b>{lang.demo_switchLanguageSecTitle}</b>
             </p>
             <ul className={s.languageList}>
               {languageList.map(({ code, name }) => (
@@ -77,29 +67,58 @@ const ListExamples = () => {
         </Toggle>
       </li>
       <li className={s.item}>
-        <Toggle title="Насолоджуватись дизайном">
+        <Toggle title={lang.demo_enjoyDesignTitle}>
           <div className={s.createBox}>
-            <p className={s.textPosition}>
-              Ой як переливається фон... Ой як красиво тикаються кнопочки... Ой,
-              а який крутий спінер
-            </p>
+            <p className={s.textPosition}>{lang.demo_enjoyDesignText}</p>
           </div>
         </Toggle>
       </li>
       <li className={s.item}>
-        <Toggle title="Подякувати автора">
+        <Toggle title={lang.demo_thankAuthorTitle}>
           <div className={s.createBox}>
-            <p className={s.textPosition}>
-              Ну якщо ти вже так впевнено сюди тикнув, треба в листівочку мені
-              написати
-            </p>
-
-            <a
-              className={classNames(s.link, s.textPosition)}
-              href="https://t.me/dankozz1"
-            >
-              <FaTelegram size={30} title="telegram" />
-            </a>
+            <p className={s.textPosition}>{lang.demo_thankAuthorText}</p>
+            <ul className={classNames(s.listLink, s.textPosition)}>
+              <li>
+                <a
+                  className={s.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://t.me/dankozz1"
+                >
+                  <FaTelegram size={30} title="Telegram" />
+                </a>
+              </li>
+              <li>
+                <a
+                  className={s.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/dankozz1t"
+                >
+                  <FaGithub size={30} title="GitHub" />
+                </a>
+              </li>
+              <li>
+                <a
+                  className={s.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  href="mailto:alexdankoxxl@gmail.com"
+                >
+                  <FaEnvelope size={30} title="Mail" />
+                </a>
+              </li>
+              <li>
+                <a
+                  className={s.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.linkedin.com/in/dankozz1/"
+                >
+                  <FaLinkedin size={30} title="LinkedIn" />
+                </a>
+              </li>
+            </ul>
           </div>
         </Toggle>
       </li>

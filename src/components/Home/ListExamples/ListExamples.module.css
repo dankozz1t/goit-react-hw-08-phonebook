@@ -58,3 +58,13 @@
   margin-left: 36px;
   padding: 6px;
 }
+
+.listLink {
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  list-style: none;
+}

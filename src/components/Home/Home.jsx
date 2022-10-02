@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <h2 className={s.text}>Що тут можна робити?</h2>
+      <h2 className={s.text}>{lang.demo_title}</h2>
 
       <ListExamples />
 
