@@ -11,9 +11,9 @@ const Toggle = ({ title, children }) => {
     <>
       <button className={s.btn} onClick={() => setIsOpen(prev => !prev)}>
         {isOpen ? (
-          <IoMdArrowDropup size={30} />
+          <IoMdArrowDropup className={s.icon} />
         ) : (
-          <IoMdArrowDropdown size={30} />
+          <IoMdArrowDropdown className={s.icon} />
         )}
         <h3 className={s.title}>{title}</h3>
       </button>

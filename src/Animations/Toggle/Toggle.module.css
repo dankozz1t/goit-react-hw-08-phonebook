@@ -15,6 +15,11 @@
   transition: 0.3s ease-in-out;
 }
 
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
 .btn {
   display: flex;
   align-items: center;
@@ -34,4 +39,15 @@
   color: rgb(0, 0, 0);
   opacity: 0.7;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
 }

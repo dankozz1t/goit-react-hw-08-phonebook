@@ -99,7 +99,7 @@ button {
 
 @media screen and (max-width: 540px) {
   .box {
-    padding: 25px;
+    padding: 10px;
   }
 
   .mainWidth {
