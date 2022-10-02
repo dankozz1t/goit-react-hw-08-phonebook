@@ -5,6 +5,7 @@ import { getLoggedIn } from 'redux/auth/authAPI/authSlice';
 import { getLanguage } from 'redux/language/selectors';
 
 import s from './Navigation.module.css';
+import Switch from 'components/Switch';
 
 const Navigation = () => {
   const lang = useSelector(getLanguage, shallowEqual);
@@ -20,6 +21,7 @@ const Navigation = () => {
           {lang.btn_phonebook}
         </NavLink>
       )}
+      <Switch />
     </nav>
   );
 };
