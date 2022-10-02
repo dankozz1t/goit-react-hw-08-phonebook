@@ -54,25 +54,29 @@
   "singup_placeholderInputPassword": "hdsk23das",
   "singup_titleInputPassword": "Введіть пароль довжиною мінімум 7",
 
-
-  
   "demo_title": "Що тут можна робити?",
   "demo_warningTitle": "Увага!",
   "demo_createAccountTitle": "Створити власний аккаунт",
   "demo_createAccountText": " Ви можете створити свій персональний обліковий запис! Він буде зберігатись на базі даних та буде доступний з любого пристрою.",
-  "demo_createAccountGif": "https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif",
+  "demo_createAccountGif": "https://i.ibb.co/Npg9CLD/2022-10-02-10-03-08.gif",
   "demo_createAccountGifAlt": "гіф відео як зареєструватись",
   "demo_createAccountWarning": " Це навчальний проєкт, база даних очищує  протягом місяці. Також будь ласка не використовуйте ваші реальні паролі, бо ну його на...",
 
   "demo_crudContactTitle": "Додавати та видаляти контакти",
   "demo_crudContactText": "Ви можете додавати та видаляти контакти з вашої телефонної книги!",
+  "demo_crudContactGif": "https://i.ibb.co/Vpv7yBr/2022-10-02-10-04-16.gif",
+  "demo_crudContactGifAlt": "гіф відео як додавати та видаляти контакти",
 
   "demo_findContactTitle": "Шукати контактів по імені",
   "demo_findContactText": "Задовбались скролити вниз по 10 хвилин, щоб знайти Тараса Шевченко? Тепер ви можете шукати контактів по імені! І це займе всего навсяго 3,1415926 мілісекунди!",
+  "demo_findContactGif": "https://i.ibb.co/X7z1mjn/2022-10-02-10-11-32.gif",
+  "demo_findContactAlt": "гіф відео як шукати контактів",
   "demo_findContactWarning": " Збережений час ви можете витратити на те, щоб написати автору який він класний",
 
   "demo_switchLanguageTitle": "Перемикати мову",
   "demo_switchLanguageText": " Все ще не знаєте англійської? Як шкода..... Але саме для Тебе ми зробили перемикач мов!",
+  "demo_switchLanguageGif": "https://i.ibb.co/n80wxm1/2022-10-02-10-14-46.gif",
+  "demo_switchLanguageGifAlt": "гіф відео як змінювати мову",
   "demo_switchLanguageSecTitle": "Наразі доступні мови:",
 
   "demo_enjoyDesignTitle": "Насолоджуватись дизайном",

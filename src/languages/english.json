@@ -60,19 +60,25 @@
   "demo_warningTitle": "Warning!",
   "demo_createAccountTitle": "Create your own account",
   "demo_createAccountText": " You can create your personal account! It will be stored in the database and will be accessible from any device.",
-  "demo_createAccountGif": "https://i.ibb.co/HgDksjM/2022-10-01-19-50-32.gif",
+  "demo_createAccountGif": "https://i.ibb.co/Npg9CLD/2022-10-02-10-03-08.gif",
   "demo_createAccountGifAlt": "gif video how to register",
   "demo_createAccountWarning": " This is an educational project, the database is cleaned within a month. Also, please don't use your real passwords, because it's on...",
 
   "demo_crudContactTitle": "Add and delete contacts",
   "demo_crudContactText": "You can add and remove contacts from your phone book!",
+  "demo_crudContactGif": "https://i.ibb.co/Vpv7yBr/2022-10-02-10-04-16.gif",
+  "demo_crudContactGifAlt": "gif video how to add and delete contacts",
 
   "demo_findContactTitle": "Search contacts by name",
   "demo_findContactText": "Tired of scrolling down for 10 minutes to find Elon Musk? You can now search for contacts by name! And it will take just 3.1415926 milliseconds!",
+    "demo_findContactGif": "https://i.ibb.co/X7z1mjn/2022-10-02-10-11-32.gif",
+  "demo_findContactAlt": "gif video how to search for contacts",
   "demo_findContactWarning": " You can spend the saved time on writing to the author how cool he is",
 
   "demo_switchLanguageTitle": "Switch language",
   "demo_switchLanguageText": "Still don't know Ukrainian? What a pity..... But we made a language switch just for you!",
+  "demo_switchLanguageGif": "https://i.ibb.co/n80wxm1/2022-10-02-10-14-46.gif",
+  "demo_switchLanguageGifAlt": "gif video how to change language",
   "demo_switchLanguageSecTitle": "Currently available languages:",
 
   "demo_enjoyDesignTitle": "Enjoy the design",

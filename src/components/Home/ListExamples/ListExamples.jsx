@@ -35,6 +35,12 @@ const ListExamples = () => {
         <Toggle title={lang.demo_crudContactTitle}>
           <div className={s.createBox}>
             <p className={s.textPosition}>{lang.demo_crudContactText}</p>
+            <img
+              className={s.imgPosition}
+              width="600"
+              src={lang.demo_crudContactGif}
+              alt={lang.demo_crudContactGifAlt}
+            />
           </div>
         </Toggle>
       </li>
@@ -42,6 +48,12 @@ const ListExamples = () => {
         <Toggle title={lang.demo_findContactTitle}>
           <div className={s.createBox}>
             <p className={s.textPosition}>{lang.demo_findContactText}</p>
+            <img
+              className={s.imgPosition}
+              width="600"
+              src={lang.demo_findContactGif}
+              alt={lang.demo_findContactAlt}
+            />
             <p className={classNames(s.textPosition, s.textWarning)}>
               <strong>{lang.demo_warningTitle}</strong>
               {lang.demo_findContactWarning}
@@ -53,9 +65,16 @@ const ListExamples = () => {
         <Toggle title={lang.demo_switchLanguageTitle}>
           <div className={s.createBox}>
             <p className={s.textPosition}>{lang.demo_switchLanguageText}</p>
+            <img
+              className={s.imgPosition}
+              width="600"
+              src={lang.demo_switchLanguageGif}
+              alt={lang.demo_switchLanguageGifAlt}
+            />
             <p className={s.textPosition}>
               <b>{lang.demo_switchLanguageSecTitle}</b>
             </p>
+
             <ul className={s.languageList}>
               {languageList.map(({ code, name }) => (
                 <li key={code}>
